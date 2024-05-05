@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TypeScript + Express 爬虫实战（二） | Cyy&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="我的博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.f3d49e5c.css" as="style"><link rel="preload" href="/assets/js/app.af7ffc51.js" as="script"><link rel="preload" href="/assets/js/2.d1a5c91e.js" as="script"><link rel="preload" href="/assets/js/1.8e8fa9b9.js" as="script"><link rel="preload" href="/assets/js/81.250ac215.js" as="script"><link rel="prefetch" href="/assets/js/10.fc8ce149.js"><link rel="prefetch" href="/assets/js/11.12f2f6ed.js"><link rel="prefetch" href="/assets/js/12.030ed1f1.js"><link rel="prefetch" href="/assets/js/13.0dcc940a.js"><link rel="prefetch" href="/assets/js/14.a219b5b9.js"><link rel="prefetch" href="/assets/js/15.552b7e3f.js"><link rel="prefetch" href="/assets/js/16.8a79d68c.js"><link rel="prefetch" href="/assets/js/17.03d26256.js"><link rel="prefetch" href="/assets/js/18.96b348ec.js"><link rel="prefetch" href="/assets/js/19.a87f1095.js"><link rel="prefetch" href="/assets/js/20.059813bd.js"><link rel="prefetch" href="/assets/js/21.78e06c9a.js"><link rel="prefetch" href="/assets/js/22.6c408340.js"><link rel="prefetch" href="/assets/js/23.113c6709.js"><link rel="prefetch" href="/assets/js/24.fa651541.js"><link rel="prefetch" href="/assets/js/25.4b3a8146.js"><link rel="prefetch" href="/assets/js/26.0755b97a.js"><link rel="prefetch" href="/assets/js/27.fea4d251.js"><link rel="prefetch" href="/assets/js/28.9ef8faa1.js"><link rel="prefetch" href="/assets/js/29.3d65f365.js"><link rel="prefetch" href="/assets/js/3.634769dd.js"><link rel="prefetch" href="/assets/js/30.3671bda7.js"><link rel="prefetch" href="/assets/js/31.bdd25f10.js"><link rel="prefetch" href="/assets/js/32.d6867bf2.js"><link rel="prefetch" href="/assets/js/33.28d5d6a3.js"><link rel="prefetch" href="/assets/js/34.4448dff5.js"><link rel="prefetch" href="/assets/js/35.dabbecf7.js"><link rel="prefetch" href="/assets/js/36.6a9c6f0f.js"><link rel="prefetch" href="/assets/js/37.02cdea05.js"><link rel="prefetch" href="/assets/js/38.73f5b560.js"><link rel="prefetch" href="/assets/js/39.68da997f.js"><link rel="prefetch" href="/assets/js/4.e7e80bab.js"><link rel="prefetch" href="/assets/js/40.e7e7dfb3.js"><link rel="prefetch" href="/assets/js/41.8b925a3c.js"><link rel="prefetch" href="/assets/js/42.df73ea87.js"><link rel="prefetch" href="/assets/js/43.e0d2bd59.js"><link rel="prefetch" href="/assets/js/44.6691785a.js"><link rel="prefetch" href="/assets/js/45.eb696a43.js"><link rel="prefetch" href="/assets/js/46.d3eca6a2.js"><link rel="prefetch" href="/assets/js/47.98a8aba0.js"><link rel="prefetch" href="/assets/js/48.6a10d206.js"><link rel="prefetch" href="/assets/js/49.54c8c3b8.js"><link rel="prefetch" href="/assets/js/5.1d5ae844.js"><link rel="prefetch" href="/assets/js/50.bd72c1ad.js"><link rel="prefetch" href="/assets/js/51.a1d48655.js"><link rel="prefetch" href="/assets/js/52.03b1f666.js"><link rel="prefetch" href="/assets/js/53.b120d4a1.js"><link rel="prefetch" href="/assets/js/54.5717b546.js"><link rel="prefetch" href="/assets/js/55.6db45fa6.js"><link rel="prefetch" href="/assets/js/56.fab0e7f4.js"><link rel="prefetch" href="/assets/js/57.d4f35802.js"><link rel="prefetch" href="/assets/js/58.fa4f0e6a.js"><link rel="prefetch" href="/assets/js/59.2be4120a.js"><link rel="prefetch" href="/assets/js/6.29f3ac19.js"><link rel="prefetch" href="/assets/js/60.35982e0a.js"><link rel="prefetch" href="/assets/js/61.913f7316.js"><link rel="prefetch" href="/assets/js/62.ae031adb.js"><link rel="prefetch" href="/assets/js/63.f5d235b8.js"><link rel="prefetch" href="/assets/js/64.5e073790.js"><link rel="prefetch" href="/assets/js/65.56a7400b.js"><link rel="prefetch" href="/assets/js/66.14e97e19.js"><link rel="prefetch" href="/assets/js/67.a03d63db.js"><link rel="prefetch" href="/assets/js/68.c515c20f.js"><link rel="prefetch" href="/assets/js/69.14d92b83.js"><link rel="prefetch" href="/assets/js/7.d9e1b9b6.js"><link rel="prefetch" href="/assets/js/70.4f3d78c1.js"><link rel="prefetch" href="/assets/js/71.6de3fdbb.js"><link rel="prefetch" href="/assets/js/72.6c50a271.js"><link rel="prefetch" href="/assets/js/73.6fdc49ca.js"><link rel="prefetch" href="/assets/js/74.aeb43127.js"><link rel="prefetch" href="/assets/js/75.59d70f1a.js"><link rel="prefetch" href="/assets/js/76.1dd1befc.js"><link rel="prefetch" href="/assets/js/77.fba7bae0.js"><link rel="prefetch" href="/assets/js/78.36ab1cc9.js"><link rel="prefetch" href="/assets/js/79.c28e37a2.js"><link rel="prefetch" href="/assets/js/80.2de7dfbf.js"><link rel="prefetch" href="/assets/js/82.04d32fc0.js"><link rel="prefetch" href="/assets/js/83.2ab02d19.js"><link rel="prefetch" href="/assets/js/84.a17a66cd.js"><link rel="prefetch" href="/assets/js/85.a48bd068.js"><link rel="prefetch" href="/assets/js/86.cdb6a513.js"><link rel="prefetch" href="/assets/js/87.d0a5fb29.js"><link rel="prefetch" href="/assets/js/88.31c58de8.js"><link rel="prefetch" href="/assets/js/89.1ac68fc0.js"><link rel="prefetch" href="/assets/js/90.a8d280cb.js"><link rel="prefetch" href="/assets/js/91.0e3c4e3d.js"><link rel="prefetch" href="/assets/js/92.42df38be.js"><link rel="prefetch" href="/assets/js/93.9de0dfe2.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.e9ca0b7c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f3d49e5c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="Cyy's blog" class="logo"> <span class="site-name can-hide">Cyy's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Frontend" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Frontend" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/NodeJs/" class="nav-link">
+  NodeJs
+</a></li><li class="dropdown-item"><!----> <a href="/Browser/" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="/TypeScript/" class="nav-link router-link-active">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer-base" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Computer-base" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/NetWork/" class="nav-link">
+  计算机网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Project-building" class="dropdown-title"><span class="title">项目构建</span> <span class="arrow down"></span></button> <button type="button" aria-label="Project-building" class="mobile-dropdown-title"><span class="title">项目构建</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LeetCode" class="dropdown-title"><span class="title">LeetCode</span> <span class="arrow down"></span></button> <button type="button" aria-label="LeetCode" class="mobile-dropdown-title"><span class="title">LeetCode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/LeetCode/" class="nav-link">
+  LeetCode
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Chenyuanyuan299" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Frontend" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Frontend" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/NodeJs/" class="nav-link">
+  NodeJs
+</a></li><li class="dropdown-item"><!----> <a href="/Browser/" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="/TypeScript/" class="nav-link router-link-active">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer-base" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Computer-base" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/NetWork/" class="nav-link">
+  计算机网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Project-building" class="dropdown-title"><span class="title">项目构建</span> <span class="arrow down"></span></button> <button type="button" aria-label="Project-building" class="mobile-dropdown-title"><span class="title">项目构建</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LeetCode" class="dropdown-title"><span class="title">LeetCode</span> <span class="arrow down"></span></button> <button type="button" aria-label="LeetCode" class="mobile-dropdown-title"><span class="title">LeetCode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/LeetCode/" class="nav-link">
+  LeetCode
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Chenyuanyuan299" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>TypeScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>TypeScript+Express爬虫项目</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/TypeScript/TypeScript&amp;Crawler/crawler1.html" class="sidebar-link">TypeScript + Express 爬虫实战（一）</a></li><li><a href="/TypeScript/TypeScript&amp;Crawler/crawler2.html" aria-current="page" class="active sidebar-link">TypeScript + Express 爬虫实战（二）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/TypeScript/TypeScript&amp;Crawler/crawler2.html#搭建-express-并写简单路由" class="sidebar-link">搭建 Express 并写简单路由</a></li><li class="sidebar-sub-header"><a href="/TypeScript/TypeScript&amp;Crawler/crawler2.html#ts-编写-express-的一些问题" class="sidebar-link">TS 编写 Express 的一些问题</a></li><li class="sidebar-sub-header"><a href="/TypeScript/TypeScript&amp;Crawler/crawler2.html#解决-express-的类型定义文件问题" class="sidebar-link">解决 Express 的类型定义文件问题</a></li><li class="sidebar-sub-header"><a href="/TypeScript/TypeScript&amp;Crawler/crawler2.html#登录登出功能的开发及接口设置" class="sidebar-link">登录登出功能的开发及接口设置</a></li></ul></li><li><a href="/TypeScript/TypeScript&amp;Crawler/crawler3.html" class="sidebar-link">TypeScript + Express 爬虫实战（三）</a></li><li><a href="/TypeScript/TypeScript&amp;Crawler/crawler4.html" class="sidebar-link">TypeScript + Express 爬虫实战（四）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="typescript-express-爬虫实战-二"><a href="#typescript-express-爬虫实战-二" class="header-anchor">#</a> TypeScript + Express 爬虫实战（二）</h1> <h2 id="搭建-express-并写简单路由"><a href="#搭建-express-并写简单路由" class="header-anchor">#</a> 搭建 Express 并写简单路由</h2> <p>接下来使用 Express 搭建一个服务器，并对之前写过的代码进行重构。</p> <p>使用 <code>npm install express --save</code> 安装 Express，同时安装类型注解文件：<code>npm install @types/express -D</code>。</p> <p>在 src 下创建两个新的文件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// index.ts</span>
+<span class="token keyword">import</span> express <span class="token keyword">from</span> <span class="token string">'express'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 导入并使用路由</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">7001</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// 监听端口</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server is running'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// router.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Router<span class="token punctuation">,</span> Request<span class="token punctuation">,</span> Response <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'express'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Crawler <span class="token keyword">from</span> <span class="token string">'./crawler'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> dellAnalyzer <span class="token keyword">from</span> <span class="token string">'./dellAnalyzer'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> Request<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/getData'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> Request<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 把爬虫实例的创建和数据处理实例的创建放到此处</span>
+  <span class="token keyword">const</span> secret <span class="token operator">=</span> <span class="token string">'x3b174jsx'</span><span class="token punctuation">;</span> <span class="token comment">// 此处是鉴权部分，secret 要写  Dell 老师给的</span>
+  <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">http://www.dell-lee.com/typescript/demo.html?secret=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>secret<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> analyzer <span class="token operator">=</span> dellAnalyzer<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">new</span> <span class="token class-name">Crawler</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> analyzer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'getData Success'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 记得导出路由</span>
+</code></pre></div><p>首先创建一个 express 实例，然后导入路由，通过每次发起请求，让爬虫自动工作并把数据写入 data 下的 course.json 文件。</p> <blockquote><p>用 TS 写最主要的是要注意 req 和 res 的类型定义，可以去类型注解文件里面找它们的类型定义。</p></blockquote> <h2 id="ts-编写-express-的一些问题"><a href="#ts-编写-express-的一些问题" class="header-anchor">#</a> TS 编写 Express 的一些问题</h2> <p>如果别人可以访问 /getData 路由，每一次刷新 course.json 就多一条数据，会有安全问题，可以写一个简单鉴权：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// router.ts</span>
+<span class="token comment">// 在根目录下创建一个表单</span>
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> Request<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> 
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>
+    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;html&gt;
+      &lt;body&gt;
+        &lt;form method=&quot;post&quot; action=&quot;/getData&quot;&gt;
+          &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+          &lt;button&gt;登录&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>通过 req.body 来获取 input 中的数据，但是会报错：<code>TypeError: Cannot read property 'password' of undefined</code>，这是因为 Express 历史比较悠久，类型注解文件并没有对 req.body 做好处理，它的类型是 any：<code>const a = req.body; // a: any</code>。这时候需要下载一个中间件：body-parser：<code>npm install body-parser --save</code>，该中间件可以提前解析请求中的内容，更新 index.ts 文件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> express <span class="token keyword">from</span> <span class="token string">'express'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> bodyParser <span class="token keyword">from</span> <span class="token string">'body-parser'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>bodyParser<span class="token punctuation">.</span><span class="token function">urlencoded</span><span class="token punctuation">(</span><span class="token punctuation">{</span> extended<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 一定要放在导入路由之前，先解析，后使用。</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">7001</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server is running'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote><p>目前 bodyParser 已经被弃用，可以直接使用 express 调用：<code>app.use(express.urlencoded({ extended: false }));</code>。</p></blockquote> <p>总结：使用 TS 写 express 的时候有两个问题：</p> <ul><li>express 库的类型定义文件 .d.ts 文件不准确；</li> <li>当使用中间件的时候，对 req 或 res 做了修改，类型并不能改变。</li></ul> <h2 id="解决-express-的类型定义文件问题"><a href="#解决-express-的类型定义文件问题" class="header-anchor">#</a> 解决 Express 的类型定义文件问题</h2> <p>上面的第一个问题可以用接口解决，接口继承 Request，并对它进行一些拓展，这样就可以正常使用 req.body 了：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// router.ts</span>
+<span class="token keyword">interface</span> <span class="token class-name">RequestWithBody</span> <span class="token keyword">extends</span> <span class="token class-name">Request</span> <span class="token punctuation">{</span>
+  body<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">undefined</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>第二个问题，假如我们在 index.ts 里面写一个简单的中间件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token operator">:</span> Request<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">,</span> next<span class="token operator">:</span> NextFunction<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  req<span class="token punctuation">.</span>teacherName <span class="token operator">=</span> <span class="token string">'Wang'</span><span class="token punctuation">;</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>由于 Request 类型里并没有 teacherName 属性，解决方法是使用类型融合，在 src 下创建一个新的文件 custom.d.ts：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 类型融合：该文件会和 express 的库类型定义文件进行融合</span>
+<span class="token keyword">declare</span> <span class="token keyword">namespace</span> Express <span class="token punctuation">{</span>
+  <span class="token keyword">interface</span> <span class="token class-name">Request</span> <span class="token punctuation">{</span>
+    teacherName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>我自己目前的总结是：修改 .d.ts 文件不准确的类型定义时，使用接口继承的方式；</p> <p>要添加新的属性并修改类型的时候，使用类型融合的方式编写新的 .d.ts 文件。</p> <h2 id="登录登出功能的开发及接口设置"><a href="#登录登出功能的开发及接口设置" class="header-anchor">#</a> 登录登出功能的开发及接口设置</h2> <p>首先安装一个中间件 cookie-session 帮助完成登录的功能：<code>npm install cookie-session --save</code>，同样的安装类型注解文件：<code>npm install @types/cookie-session -D</code>。在 index.ts 引入路由之前引入并使用该中间件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// index.ts</span>
+<span class="token keyword">import</span> cookieSession <span class="token keyword">from</span> <span class="token string">'cookie-session'</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token function">cookieSession</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'session'</span><span class="token punctuation">,</span> <span class="token comment">// Cookie的名称</span>
+    keys<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'teacher Wang'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 用于签名和验证Cookie值的键列表</span>
+    maxAge<span class="token operator">:</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token comment">// 有效时间</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre></div><p>在 src 下创建一个文件夹 utils，将 crawler.ts、dellAnalyzer.ts 移入，并创建一个新的文件，该文件的作用是统一接口数据结构：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// util.ts</span>
+<span class="token keyword">interface</span> <span class="token class-name">Result</span> <span class="token punctuation">{</span>
+  success<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span> <span class="token comment">// 操作是否成功</span>
+  errMsg<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token comment">// 错误信息</span>
+  data<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span> <span class="token comment">// 返回的数据</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> getResponseData <span class="token operator">=</span> <span class="token punctuation">(</span>data<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> errMsg<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> Result <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>errMsg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      success<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      errMsg<span class="token punctuation">,</span>
+      data
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    success<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    data
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>新的 router.ts 文件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> fs <span class="token keyword">from</span> <span class="token string">'fs'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Router<span class="token punctuation">,</span> Request<span class="token punctuation">,</span> Response<span class="token punctuation">,</span> NextFunction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'express'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Crawler <span class="token keyword">from</span> <span class="token string">'./utils/crawler'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> DellAnalyzer <span class="token keyword">from</span> <span class="token string">'./utils/dellAnalyzer'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getResponseData <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./utils/util'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">BodyRequest</span> <span class="token keyword">extends</span> <span class="token class-name">Request</span> <span class="token punctuation">{</span>
+  body<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">undefined</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 对访问所有操作的登录状态进行管理</span>
+<span class="token keyword">const</span> <span class="token function-variable function">checkLogin</span> <span class="token operator">=</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> Request<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">,</span> next<span class="token operator">:</span> NextFunction<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> isLogin <span class="token operator">=</span> req<span class="token punctuation">.</span>session <span class="token operator">?</span> req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>login <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>isLogin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 登录后才可以进行下一步操作</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token function">getResponseData</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'请登录'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> BodyRequest<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> isLogin <span class="token operator">=</span> req<span class="token punctuation">.</span>session <span class="token operator">?</span> req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>login <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isLogin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 
+      &lt;html&gt;
+        &lt;body&gt;
+          &lt;a href='/getData'&gt;爬取内容&lt;/a&gt;
+          &lt;a href='/showData'&gt;展示内容&lt;/a&gt;
+          &lt;a href='/logout'&gt;退出&lt;/a&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      &lt;html&gt;
+        &lt;body&gt;
+          &lt;form method=&quot;post&quot; action=&quot;/login&quot;&gt;
+            &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+            &lt;button&gt;登陆&lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/logout'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> BodyRequest<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>session<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>login <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token function">getResponseData</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> BodyRequest<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> password <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> isLogin <span class="token operator">=</span> req<span class="token punctuation">.</span>session <span class="token operator">?</span> req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>login <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isLogin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token function">getResponseData</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string">'已经登录过'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>password <span class="token operator">===</span> <span class="token string">'123'</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>session<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>login <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token function">getResponseData</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token function">getResponseData</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string">'登录失败'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/getData'</span><span class="token punctuation">,</span> checkLogin<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> BodyRequest<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> secret <span class="token operator">=</span> <span class="token string">'x3b174jsx'</span><span class="token punctuation">;</span> <span class="token comment">// 此处是鉴权部分，secret 要写  Dell 老师给的</span>
+  <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">http://www.dell-lee.com/typescript/demo.html?secret=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>secret<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> analyzer <span class="token operator">=</span> DellAnalyzer<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">new</span> <span class="token class-name">Crawler</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> analyzer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token function">getResponseData</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/showData'</span><span class="token punctuation">,</span> checkLogin<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> BodyRequest<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> position <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../data/course.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token function">getResponseData</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token function">getResponseData</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string">'数据不存在'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router<span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/22/2024, 6:23:50 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/TypeScript/TypeScript&amp;Crawler/crawler1.html" class="prev">
+        TypeScript + Express 爬虫实战（一）
+      </a></span> <span class="next"><a href="/TypeScript/TypeScript&amp;Crawler/crawler3.html">
+        TypeScript + Express 爬虫实战（三）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.af7ffc51.js" defer></script><script src="/assets/js/2.d1a5c91e.js" defer></script><script src="/assets/js/1.8e8fa9b9.js" defer></script><script src="/assets/js/81.250ac215.js" defer></script>
+  </body>
+</html>

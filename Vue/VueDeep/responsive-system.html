@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>响应系统的作用与实现 | Cyy&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="我的博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.f3d49e5c.css" as="style"><link rel="preload" href="/assets/js/app.af7ffc51.js" as="script"><link rel="preload" href="/assets/js/2.d1a5c91e.js" as="script"><link rel="preload" href="/assets/js/1.8e8fa9b9.js" as="script"><link rel="preload" href="/assets/js/91.0e3c4e3d.js" as="script"><link rel="prefetch" href="/assets/js/10.fc8ce149.js"><link rel="prefetch" href="/assets/js/11.12f2f6ed.js"><link rel="prefetch" href="/assets/js/12.030ed1f1.js"><link rel="prefetch" href="/assets/js/13.0dcc940a.js"><link rel="prefetch" href="/assets/js/14.a219b5b9.js"><link rel="prefetch" href="/assets/js/15.552b7e3f.js"><link rel="prefetch" href="/assets/js/16.8a79d68c.js"><link rel="prefetch" href="/assets/js/17.03d26256.js"><link rel="prefetch" href="/assets/js/18.96b348ec.js"><link rel="prefetch" href="/assets/js/19.a87f1095.js"><link rel="prefetch" href="/assets/js/20.059813bd.js"><link rel="prefetch" href="/assets/js/21.78e06c9a.js"><link rel="prefetch" href="/assets/js/22.6c408340.js"><link rel="prefetch" href="/assets/js/23.113c6709.js"><link rel="prefetch" href="/assets/js/24.fa651541.js"><link rel="prefetch" href="/assets/js/25.4b3a8146.js"><link rel="prefetch" href="/assets/js/26.0755b97a.js"><link rel="prefetch" href="/assets/js/27.fea4d251.js"><link rel="prefetch" href="/assets/js/28.9ef8faa1.js"><link rel="prefetch" href="/assets/js/29.3d65f365.js"><link rel="prefetch" href="/assets/js/3.634769dd.js"><link rel="prefetch" href="/assets/js/30.3671bda7.js"><link rel="prefetch" href="/assets/js/31.bdd25f10.js"><link rel="prefetch" href="/assets/js/32.d6867bf2.js"><link rel="prefetch" href="/assets/js/33.28d5d6a3.js"><link rel="prefetch" href="/assets/js/34.4448dff5.js"><link rel="prefetch" href="/assets/js/35.dabbecf7.js"><link rel="prefetch" href="/assets/js/36.6a9c6f0f.js"><link rel="prefetch" href="/assets/js/37.02cdea05.js"><link rel="prefetch" href="/assets/js/38.73f5b560.js"><link rel="prefetch" href="/assets/js/39.68da997f.js"><link rel="prefetch" href="/assets/js/4.e7e80bab.js"><link rel="prefetch" href="/assets/js/40.e7e7dfb3.js"><link rel="prefetch" href="/assets/js/41.8b925a3c.js"><link rel="prefetch" href="/assets/js/42.df73ea87.js"><link rel="prefetch" href="/assets/js/43.e0d2bd59.js"><link rel="prefetch" href="/assets/js/44.6691785a.js"><link rel="prefetch" href="/assets/js/45.eb696a43.js"><link rel="prefetch" href="/assets/js/46.d3eca6a2.js"><link rel="prefetch" href="/assets/js/47.98a8aba0.js"><link rel="prefetch" href="/assets/js/48.6a10d206.js"><link rel="prefetch" href="/assets/js/49.54c8c3b8.js"><link rel="prefetch" href="/assets/js/5.1d5ae844.js"><link rel="prefetch" href="/assets/js/50.bd72c1ad.js"><link rel="prefetch" href="/assets/js/51.a1d48655.js"><link rel="prefetch" href="/assets/js/52.03b1f666.js"><link rel="prefetch" href="/assets/js/53.b120d4a1.js"><link rel="prefetch" href="/assets/js/54.5717b546.js"><link rel="prefetch" href="/assets/js/55.6db45fa6.js"><link rel="prefetch" href="/assets/js/56.fab0e7f4.js"><link rel="prefetch" href="/assets/js/57.d4f35802.js"><link rel="prefetch" href="/assets/js/58.fa4f0e6a.js"><link rel="prefetch" href="/assets/js/59.2be4120a.js"><link rel="prefetch" href="/assets/js/6.29f3ac19.js"><link rel="prefetch" href="/assets/js/60.35982e0a.js"><link rel="prefetch" href="/assets/js/61.913f7316.js"><link rel="prefetch" href="/assets/js/62.ae031adb.js"><link rel="prefetch" href="/assets/js/63.f5d235b8.js"><link rel="prefetch" href="/assets/js/64.5e073790.js"><link rel="prefetch" href="/assets/js/65.56a7400b.js"><link rel="prefetch" href="/assets/js/66.14e97e19.js"><link rel="prefetch" href="/assets/js/67.a03d63db.js"><link rel="prefetch" href="/assets/js/68.c515c20f.js"><link rel="prefetch" href="/assets/js/69.14d92b83.js"><link rel="prefetch" href="/assets/js/7.d9e1b9b6.js"><link rel="prefetch" href="/assets/js/70.4f3d78c1.js"><link rel="prefetch" href="/assets/js/71.6de3fdbb.js"><link rel="prefetch" href="/assets/js/72.6c50a271.js"><link rel="prefetch" href="/assets/js/73.6fdc49ca.js"><link rel="prefetch" href="/assets/js/74.aeb43127.js"><link rel="prefetch" href="/assets/js/75.59d70f1a.js"><link rel="prefetch" href="/assets/js/76.1dd1befc.js"><link rel="prefetch" href="/assets/js/77.fba7bae0.js"><link rel="prefetch" href="/assets/js/78.36ab1cc9.js"><link rel="prefetch" href="/assets/js/79.c28e37a2.js"><link rel="prefetch" href="/assets/js/80.2de7dfbf.js"><link rel="prefetch" href="/assets/js/81.250ac215.js"><link rel="prefetch" href="/assets/js/82.04d32fc0.js"><link rel="prefetch" href="/assets/js/83.2ab02d19.js"><link rel="prefetch" href="/assets/js/84.a17a66cd.js"><link rel="prefetch" href="/assets/js/85.a48bd068.js"><link rel="prefetch" href="/assets/js/86.cdb6a513.js"><link rel="prefetch" href="/assets/js/87.d0a5fb29.js"><link rel="prefetch" href="/assets/js/88.31c58de8.js"><link rel="prefetch" href="/assets/js/89.1ac68fc0.js"><link rel="prefetch" href="/assets/js/90.a8d280cb.js"><link rel="prefetch" href="/assets/js/92.42df38be.js"><link rel="prefetch" href="/assets/js/93.9de0dfe2.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.e9ca0b7c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f3d49e5c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="Cyy's blog" class="logo"> <span class="site-name can-hide">Cyy's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Frontend" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Frontend" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/NodeJs/" class="nav-link">
+  NodeJs
+</a></li><li class="dropdown-item"><!----> <a href="/Browser/" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="/TypeScript/" class="nav-link">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer-base" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Computer-base" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/NetWork/" class="nav-link">
+  计算机网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Project-building" class="dropdown-title"><span class="title">项目构建</span> <span class="arrow down"></span></button> <button type="button" aria-label="Project-building" class="mobile-dropdown-title"><span class="title">项目构建</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LeetCode" class="dropdown-title"><span class="title">LeetCode</span> <span class="arrow down"></span></button> <button type="button" aria-label="LeetCode" class="mobile-dropdown-title"><span class="title">LeetCode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/LeetCode/" class="nav-link">
+  LeetCode
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Chenyuanyuan299" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Frontend" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Frontend" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/NodeJs/" class="nav-link">
+  NodeJs
+</a></li><li class="dropdown-item"><!----> <a href="/Browser/" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="/TypeScript/" class="nav-link">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Computer-base" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Computer-base" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/NetWork/" class="nav-link">
+  计算机网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Project-building" class="dropdown-title"><span class="title">项目构建</span> <span class="arrow down"></span></button> <button type="button" aria-label="Project-building" class="mobile-dropdown-title"><span class="title">项目构建</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LeetCode" class="dropdown-title"><span class="title">LeetCode</span> <span class="arrow down"></span></button> <button type="button" aria-label="LeetCode" class="mobile-dropdown-title"><span class="title">LeetCode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/LeetCode/" class="nav-link">
+  LeetCode
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Chenyuanyuan299" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue深入</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Vue/VueDeep/overview-of-frame-design.html" class="sidebar-link">权衡的艺术</a></li><li><a href="/Vue/VueDeep/responsive-system.html" aria-current="page" class="active sidebar-link">响应系统的作用与实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Vue/VueDeep/responsive-system.html#响应式数据的基本实现" class="sidebar-link">响应式数据的基本实现</a></li><li class="sidebar-sub-header"><a href="/Vue/VueDeep/responsive-system.html#设计一个完善的响应式系统" class="sidebar-link">设计一个完善的响应式系统</a></li><li class="sidebar-sub-header"><a href="/Vue/VueDeep/responsive-system.html#分支切换与-cleanup" class="sidebar-link">分支切换与 cleanup</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="响应系统的作用与实现"><a href="#响应系统的作用与实现" class="header-anchor">#</a> 响应系统的作用与实现</h1> <p>副作用函数指，当该函数执行时，会直接或间接影响其他函数的执行，例如对 body 的设置，或者对全局变量的修改。</p> <p>响应式数据指，副作用函数读取了该数据并作用于其他地方，当该数据内容发生改变时，副作用函数能自动重新执行更新。</p> <h2 id="响应式数据的基本实现"><a href="#响应式数据的基本实现" class="header-anchor">#</a> 响应式数据的基本实现</h2> <p>副作用函数执行，会触发响应式数据的读取；修改响应式数据，会触发响应式数据的设置。我们可以拦截这两个过程。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 存储副作用函数的桶</span>
+<span class="token keyword">const</span> bucket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span> text<span class="token operator">:</span> <span class="token string">'hello world'</span> <span class="token punctuation">}</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 拦截读取操作</span>
+  <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将副作用函数 effect 添加到存储副作用函数的桶中</span>
+    bucket<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>effect<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 拦截设置操作</span>
+  <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> newVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> newVal
+    <span class="token comment">// 把副作用函数从桶里取出并执行</span>
+    bucket<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fn</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> obj<span class="token punctuation">.</span>text
+<span class="token punctuation">}</span>
+<span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="设计一个完善的响应式系统"><a href="#设计一个完善的响应式系统" class="header-anchor">#</a> 设计一个完善的响应式系统</h2> <p>完善一下副作用函数名 effect 的硬编码方式：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> activeEffect
+<span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 当调用 effect 注册副作用函数时，将副作用函数复制给 activeEffect</span>
+  activeEffect <span class="token operator">=</span> fn
+  <span class="token comment">// 执行副作用函数</span>
+  <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 可以注册任何形式的副作用函数了</span>
+<span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// console.log('effect run')</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> obj<span class="token punctuation">.</span>text
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  obj<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'hello vue3'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+</code></pre></div><p>实际上按照以上的代码，副作用函数与被操作的目标字段间并没有建立联系，无论读取该对象的哪个属性，都会把副作用函数收集到桶中；无论设置该对象的哪个属性，都会把桶中的副作用函数取出来执行。console.log 将会被执行两次。</p> <p>使用 weakMap 进行改造，并将收集和触发进行封装：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> bucket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span> text<span class="token operator">:</span> <span class="token string">'hello world'</span> <span class="token punctuation">}</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">track</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  
+  <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> newVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> newVal
+		<span class="token function">trigger</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">track</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>activeEffect<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  <span class="token keyword">let</span> depsMap <span class="token operator">=</span> bucket<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>depsMap<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    bucket<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> <span class="token punctuation">(</span>depsMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">let</span> deps <span class="token operator">=</span> depsMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>deps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    depsMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token punctuation">(</span>deps <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  deps<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>activeEffect<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">trigger</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> depsMap <span class="token operator">=</span> bucket<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>depsMap<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  <span class="token keyword">const</span> effects <span class="token operator">=</span> depsMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+  effects <span class="token operator">&amp;&amp;</span> effects<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fn</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="分支切换与-cleanup"><a href="#分支切换与-cleanup" class="header-anchor">#</a> 分支切换与 cleanup</h2> <p>有如下代码：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span> ok<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> text<span class="token operator">:</span> <span class="token string">'hello world'</span> <span class="token punctuation">}</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">/*...*/</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">effect</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">effectFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> obj<span class="token punctuation">.</span>ok <span class="token operator">?</span> obj<span class="token punctuation">.</span>text <span class="token operator">:</span> <span class="token string">'not'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>此时，副作用函数 effectFn 被字段 data.ok 和 data.text 对应的依赖集合收集，当 obj.ok 的值被修改为 fasle，理想情况下副作用函数 effectFn 不应再被 obj.text 对应的依赖集合收集，但是当执行<code>obj.text = 'hello vue3'</code>时，由于副作用函数 effectFn 仍存在于 obj.text 对应的依赖集合中，所以该函数会重新执行，为了解决这个问题，可以在 track 函数中对该依赖集合进行反向收集，并且在每次副作用函数执行时，将其从相关联的依赖集合中移除并建立新的联系：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> activeEffect
+<span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">effectFn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">cleanup</span><span class="token punctuation">(</span>effectFn<span class="token punctuation">)</span>
+    activeEffect <span class="token operator">=</span> effectFn
+    <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// activeEffect.deps 用来存储所有与该副作用函数相关的依赖集合</span>
+  effectFn<span class="token punctuation">.</span>deps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token function">effectFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">track</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token operator">...</span>
+  deps<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>activeEffect<span class="token punctuation">)</span>
+  activeEffect<span class="token punctuation">.</span>deps<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>deps<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">cleanup</span><span class="token punctuation">(</span><span class="token parameter">effectFn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> effectFn<span class="token punctuation">.</span>deps<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> deps <span class="token operator">=</span> effectFn<span class="token punctuation">.</span>deps<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    deps<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>effectFn<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  effectFn<span class="token punctuation">.</span>deps<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当前的代码会导致无限循环，</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/22/2024, 6:23:50 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Vue/VueDeep/overview-of-frame-design.html" class="prev">
+        权衡的艺术
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.af7ffc51.js" defer></script><script src="/assets/js/2.d1a5c91e.js" defer></script><script src="/assets/js/1.8e8fa9b9.js" defer></script><script src="/assets/js/91.0e3c4e3d.js" defer></script>
+  </body>
+</html>
